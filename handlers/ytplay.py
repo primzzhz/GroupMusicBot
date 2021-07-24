@@ -61,8 +61,8 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        text="Support Groub",
-                        url=f"{https://t.me/wibuempireindo}")
+                        text="wakatta",
+                        url=f"{url}")
                    
                 ]
             ]
