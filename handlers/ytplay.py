@@ -18,11 +18,11 @@ from helpers.errors import DurationLimitError
 from helpers.gets import get_url, get_file_name
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-@Client.on_message(command("p") & other_filters)
+@Client.on_message(command("ytp") & other_filters)
 @errors
 async def play(_, message: Message):
 
-    lel = await message.reply("🔎 **Finding** the song...")
+    lel = await message.reply("🔎 **Bentar anjing** ...")
     sender_id = message.from_user.id
     user_id = message.from_user.id
     sender_name = message.from_user.first_name
@@ -101,7 +101,7 @@ async def play(_, message: Message):
         await message.reply_photo(
         photo=thumb_name,
         reply_markup=keyboard,
-        caption="▶️ **Playing** here the song requested by {} via YouTube Music 😜".format(
+        caption="▶️ **Lagu diputar** requested by {} via Xnxx".format(
         message.from_user.mention()
         ),
     )
