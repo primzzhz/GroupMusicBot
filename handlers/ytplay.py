@@ -18,7 +18,7 @@ from helpers.errors import DurationLimitError
 from helpers.gets import get_url, get_file_name
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-@Client.on_message(command("ytp") & other_filters)
+@Client.on_message(command("ytwibu") & other_filters)
 @errors
 async def play(_, message: Message):
 
@@ -72,7 +72,7 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        text="Watch On Nekopoi.care ,😅",
+                        text="Watch On Nekopoi.care 😅",
                         url=f"{url}")
                    
                 ]
@@ -101,7 +101,7 @@ async def play(_, message: Message):
         await message.reply_photo(
         photo=thumb_name,
         reply_markup=keyboard,
-        caption="▶️ **Lagu diputar** requested by {} via nekopoi.care ,😅".format(
+        caption="▶️ **Lagu diputar** req by {} via nekopoi.care 😅".format(
         message.from_user.mention()
         ),
     )
