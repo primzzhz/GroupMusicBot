@@ -18,7 +18,7 @@ from helpers.errors import DurationLimitError
 from helpers.gets import get_url, get_file_name
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-@Client.on_message(command("ytp") & other_filters)
+@Client.on_message(command("wibu") & other_filters)
 @errors
 async def play(_, message: Message):
 
@@ -33,7 +33,7 @@ async def play(_, message: Message):
     for i in message.command[1:]:
         query += ' ' + str(i)
     print(query)
-    await lel.edit("🎵 **Prosessss** lagu...")
+    await lel.edit("🎵 **Ntar cok** asu...")
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = YoutubeSearch(query, max_results=1).to_dict()
@@ -61,8 +61,8 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        text="Watch On YouTube 🎬",
-                        url=f"{url}")
+                        text="Support Groub",
+                        url=f"{https://t.me/wibuempireindo}")
                    
                 ]
             ]
@@ -72,7 +72,7 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        text="Watch On Xnxx 🎬",
+                        text="Watch On Nekopoi.care ,😅",
                         url=f"{url}")
                    
                 ]
@@ -87,7 +87,7 @@ async def play(_, message: Message):
     elif url:
         file_path = await converter.convert(youtube.download(url))
     else:
-        return await lel.edit_text("❗ You did not give me anything to play!")
+        return await lel.edit_text("❗ Lu gak kasi gw judul anjing!")
 
     if message.chat.id in callsmusic.pytgcalls.active_calls:
         position = await queues.put(message.chat.id, file=file_path)
@@ -101,7 +101,7 @@ async def play(_, message: Message):
         await message.reply_photo(
         photo=thumb_name,
         reply_markup=keyboard,
-        caption="▶️ **Lagu diputar** requested by {} via Xnxx".format(
+        caption="▶️ **Lagu diputar** requested by {} via nekopoi.care ,😅".format(
         message.from_user.mention()
         ),
     )
