@@ -18,7 +18,7 @@ from helpers.errors import DurationLimitError
 from helpers.gets import get_url, get_file_name
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-@Client.on_message(-("ytwibu") & other_filters)
+@Client.on_message(command("p") & other_filters)
 @errors
 async def play(_, message: Message):
 
@@ -72,8 +72,8 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        text="Watch On Nekopoi.care 😅",
-                        url=f"{url}")
+                        text="Support Groub",
+                        url=f"{https://t.me/wibuempireindo}")
                    
                 ]
             ]
@@ -93,7 +93,7 @@ async def play(_, message: Message):
         position = await queues.put(message.chat.id, file=file_path)
         await message.reply_photo(
         photo=thumb_name, 
-        caption=f"#⃣ Your requested song **queued** at position {position}!",
+        caption=f"#⃣ Req **Lagu** ke {position}!",
         reply_markup=keyboard2)
         return await lel.delete()
     else:
@@ -101,7 +101,7 @@ async def play(_, message: Message):
         await message.reply_photo(
         photo=thumb_name,
         reply_markup=keyboard,
-        caption="▶️ **Lagu diputar** req by {} via nekopoi.care 😅".format(
+        caption="▶️ **Lagu diputar** req by {} ".format(
         message.from_user.mention()
         ),
     )
